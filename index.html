@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sujal Chauhan - Project Manager</title>
+  <title>Sujal Chauhan - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
@@ -45,22 +45,21 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
     }
     .section {
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
+      display: none;
+    }
+    .section.active {
+      display: block;
     }
     .section h2 {
       border-bottom: 2px solid #eee;
       padding-bottom: 5px;
       margin-bottom: 20px;
-    }
-    .section p, .section li {
-      line-height: 1.6;
-    }
-    ul {
-      padding-left: 20px;
     }
     .card {
       background: white;
@@ -68,12 +67,6 @@
       margin-bottom: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #eee;
-      font-size: 0.9rem;
     }
     .btn {
       display: inline-block;
@@ -84,30 +77,36 @@
       text-decoration: none;
       margin-top: 10px;
     }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #eee;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="photo.jpg" alt="Sujal Chauhan">
+    <img src="Pinpoint_HTP3730.jpg" alt="Sujal Chauhan">
     <h1>Sujal Chauhan</h1>
     <p>Project Manager | Digital Transformation | PMP® | CSM®</p>
     <a class="btn" href="mailto:sujal.chauhan@live.in">📧 Contact Me</a>
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#resume">Resume</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('experience')">Experience</a>
+    <a onclick="showSection('projects')">Projects</a>
+    <a onclick="showSection('resume')">Resume</a>
+    <a onclick="showSection('testimonials')">Testimonials</a>
+    <a onclick="showSection('certifications')">Certifications</a>
+    <a onclick="showSection('contact')">Contact</a>
   </nav>
 
-  <div class="section" id="about">
+  <div class="section active" id="about">
     <h2>About Me</h2>
     <div class="card">
-      <p>I'm a highly adaptable and results-driven Project Manager with 15+ years of experience managing end-to-end digital transformation, ERP implementation, and IT infrastructure projects across diverse industries. I specialize in aligning business goals with technology solutions to drive efficiency, optimize processes, and empower cross-functional teams.</p>
+      <p>I'm a highly adaptable and results-driven Project Manager with 15+ years of experience managing end-to-end digital transformation, ERP implementation, and IT infrastructure projects. I specialize in aligning business goals with technology solutions.</p>
     </div>
   </div>
 
@@ -118,7 +117,6 @@
       <ul>
         <li>Led ERP and Power BI implementation reducing manual reporting by 40%.</li>
         <li>Drove HRIS system migration to ADP improving employee data accuracy.</li>
-        <li>Coordinated project planning, resource allocation, and vendor communication.</li>
         <li>Conducted impact analysis, UAT sessions, and change management workshops.</li>
       </ul>
     </div>
@@ -126,7 +124,6 @@
       <strong>Project Coordinator – Teleperformance</strong>
       <ul>
         <li>Supported financial system upgrades and Salesforce rollout initiatives.</li>
-        <li>Reduced operational errors by 30% through improved workflow documentation.</li>
         <li>Managed weekly status meetings, risk logs, and project dashboards.</li>
         <li>Trained 200+ staff on system adoption and process changes.</li>
       </ul>
@@ -136,8 +133,8 @@
   <div class="section" id="projects">
     <h2>Projects</h2>
     <div class="card">
-      <p><strong>Digital Transformation – Manufacturing Sector:</strong> Implemented D365 ERP system integrating procurement, finance, and inventory, resulting in 25% faster operations.</p>
-      <p><strong>AI Integration Pilot – IT Support:</strong> Coordinated AI chatbot development for internal IT ticketing, reducing response time by 35%.</p>
+      <p><strong>Digital Transformation – Manufacturing:</strong> Implemented D365 ERP system, improving workflow speed by 25%.</p>
+      <p><strong>AI Chatbot Pilot – Support:</strong> Launched internal chatbot for IT tickets, reducing wait time by 35%.</p>
     </div>
   </div>
 
@@ -149,8 +146,8 @@
   <div class="section" id="testimonials">
     <h2>Testimonials</h2>
     <div class="card">
-      <p><em>"Sujal’s leadership and communication kept our complex migration project on track. He’s an excellent collaborator."</em><br>- Director, IT Operations</p>
-      <p><em>"His calm approach and attention to detail made all the difference during our ERP rollout. Highly recommend!"</em><br>- Senior Business Analyst</p>
+      <p><em>"Sujal’s leadership and communication kept our complex migration project on track."</em><br>- Director, IT Operations</p>
+      <p><em>"His calm approach and attention to detail made all the difference during our ERP rollout."</em><br>- Senior Business Analyst</p>
     </div>
   </div>
 
@@ -158,9 +155,9 @@
     <h2>Certifications</h2>
     <div class="card">
       <ul>
-        <li>PMP® – Project Management Institute</li>
+        <li>PMP® – PMI</li>
         <li>CSM® – Scrum Alliance</li>
-        <li>Generative AI for Project Managers – Project Management Institute (PMI)</li>
+        <li>Generative AI for Project Managers – PMI</li>
         <li>Salesforce Certified – Trailhead</li>
       </ul>
     </div>
@@ -177,5 +174,12 @@
   <footer>
     &copy; 2024 Sujal Chauhan. All rights reserved.
   </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
